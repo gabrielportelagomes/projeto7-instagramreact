@@ -190,6 +190,10 @@
     padding: 13px 16px;
     font-size: 24px;
   }
+
+  .curtido {
+    color: red;
+  }
   
   .post .fundo .acoes div:first-child ion-icon {
     margin-right: 6px;
@@ -206,6 +210,10 @@
     width: 20px;
     height: 20px;
     margin-right: 10px;
+  }
+
+  .post .fundo .texto strong {
+    font-weight: bold;
   }
   
   .post:last-child {

@@ -1,12 +1,24 @@
+import React from "react"
+
 function InformacoesUsuario(props) {
+  const [nome, setNome] = React.useState("")
+  const [imagem, setFoto] = React.useState("")
+  function trocarNome() {
+    const novoNome = prompt("Insira seu nome de usuário:")
+    setNome(novoNome)
+  }
+  function trocarImagem() {
+    const novaImagem = prompt("Insira o link da imagem de perfil:")
+    setFoto(novaImagem)
+  }
   return (
     <div class="usuario">
-      <img src={props.imagem} />
+      <img src={(imagem === "" || imagem === null) ? `${props.imagem}` : imagem} onClick={trocarImagem}/>
       <div class="texto">
         <strong>{props.ususario}</strong>
         <span>
-          {props.nome}
-          <ion-icon name="pencil"></ion-icon>
+          {(nome === "" || nome === null) ? `${props.nome}` : nome}
+          <ion-icon name="pencil" onClick={trocarNome}></ion-icon>
         </span>
       </div>
     </div>
@@ -15,6 +27,6 @@ function InformacoesUsuario(props) {
 
 export default function Usuario() {
   return (
-        <InformacoesUsuario imagem="assets/img/catanacomics.svg" ususario="catanacomics" nome="Catana"/>
-    );
+    <InformacoesUsuario imagem="assets/img/catanacomics.svg" ususario="catanacomics" nome="Catana" />
+  );
 }
