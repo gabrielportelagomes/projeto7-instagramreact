@@ -59,7 +59,7 @@ function Post(props) {
         <div class="curtidas">
           <img src={props.imagemLike} />
           <div class="texto">
-            Curtido por <strong>{props.usuarioLike}</strong> e <strong>outras {curtidas} pessoas</strong>
+            Curtido por <strong>{props.usuarioLike}</strong> e <strong>outras {curtidas.toLocaleString('pt-BR')} pessoas</strong>
           </div>
         </div>
       </div>
